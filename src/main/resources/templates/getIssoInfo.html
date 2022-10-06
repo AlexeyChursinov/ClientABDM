@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -23,11 +23,11 @@
         <a href="/">Главная страница</a>
     </div>
     <div class="mt-5">
-        <form action="#" th:action="@{getIssoInfoSendRequest}" th:object="${getIssoInfo}" method="post">
+        <form th:action="@{/getIssoInfoSendRequest}" th:object="${issoInfo}" method="post">
             <div class="row">
                 <div class="mb-3 col-md-6">
                     <label class="form-label" for="cIsso">id ИССО</label>
-                    <input class="form-control" id="cIsso" required type="number" value="0" th:th:value="*{cIssoField}">
+                    <input class="form-control" id="cIsso" required type="number" placeholder="введите id" th:field="*{cIssoField}">
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
                 </div>
             </div>

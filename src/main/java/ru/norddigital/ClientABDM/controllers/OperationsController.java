@@ -1,15 +1,26 @@
 package ru.norddigital.ClientABDM.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import ru.norddigital.ClientABDM.service.IssoInfoService;
+import ru.norddigital.ClientABDM.soap.operations.IssoInfo;
 
 @Controller
 public class OperationsController {
 
-    @RequestMapping("/getIssoInfoSendRequest")
-    public String sendRequest(Model model) {
+    IssoInfoService issoInfoService;
 
+    @Autowired
+    public OperationsController(IssoInfoService issoInfoService) {
+        this.issoInfoService = issoInfoService;
+    }
+
+    @PostMapping("/getIssoInfoSendRequest")
+    public String sendRequest(@ModelAttribute("issoInfo") IssoInfo issoInfo) {
+
+        issoInfoService.sendRequest(issoInfo);
 
         return "redirect:/getIssoInfo";
     }
