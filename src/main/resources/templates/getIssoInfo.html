@@ -23,7 +23,7 @@
         <a href="/">Главная страница</a>
     </div>
     <div class="mt-5">
-        <form th:action="@{/getIssoInfoSendRequest}" th:object="${issoInfo}" method="post">
+        <form th:action="@{/getIssoInfo}" th:object="${issoInfo}" method="post">
             <div class="row">
                 <div class="mb-3 col-md-6">
                     <label class="form-label" for="cIsso">id ИССО</label>
@@ -31,8 +31,17 @@
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
                 </div>
             </div>
+            <div class="row">
+                <p th:text="${issoInfo.cIssoField}"></p>
+            </div>
         </form>
     </div>
 </div>
+<script>
+    function init() {
+        document.getElementById("cIsso").value = "";
+    }
+    window.onload = init;
+</script>
 </body>
 </html>

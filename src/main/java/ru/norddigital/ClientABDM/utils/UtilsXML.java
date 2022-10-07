@@ -8,7 +8,14 @@ import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class UtilsXML {
 
@@ -33,6 +40,21 @@ public class UtilsXML {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static String documentToString(Document doc) {
+        try {
+            Source source = new DOMSource(doc);
+            StringWriter stringWriter = new StringWriter();
+            Result result = new StreamResult(stringWriter);
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer();
+            transformer.transform(source, result);
+            return stringWriter.getBuffer().toString();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public static String removeCDATAFromElement(Element e) {

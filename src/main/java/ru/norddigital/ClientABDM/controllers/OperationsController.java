@@ -17,12 +17,13 @@ public class OperationsController {
         this.issoInfoService = issoInfoService;
     }
 
-    @PostMapping("/getIssoInfoSendRequest")
+    @PostMapping("/getIssoInfo")
     public String sendRequest(@ModelAttribute("issoInfo") IssoInfo issoInfo) {
 
         issoInfoService.sendRequest(issoInfo);
+        issoInfoService.getResponse();
 
-        return "redirect:/getIssoInfo";
+        return "getIssoInfo";
     }
 
 }

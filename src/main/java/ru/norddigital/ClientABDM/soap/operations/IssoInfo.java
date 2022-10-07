@@ -9,6 +9,8 @@ public class IssoInfo implements SoapBodyOperations{
 
     private String cIssoField; //5500934
 
+    private String barrierName;
+
     @Override
     public SOAPBody createSoapBody(SOAPEnvelope envelope, String namespace) throws SOAPException {
         SOAPBody soapBody = envelope.getBody();

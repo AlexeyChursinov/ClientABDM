@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import ru.norddigital.ClientABDM.soap.SoapSender;
 import ru.norddigital.ClientABDM.soap.operations.IssoInfo;
+import ru.norddigital.ClientABDM.soap.responseData.IssoInfoResponseData;
 
 @Service
 public class IssoInfoService {
@@ -15,8 +16,14 @@ public class IssoInfoService {
     @Value("${IssoInfo_SoapAction}")
     private String soapAction;
 
+    private Document responseSOAP;
+
     public void sendRequest(IssoInfo IssoInfo) {
-        Document responseSOAP = SoapSender.sendRequestAndGetResponse(endpoint, soapAction, IssoInfo);
+        responseSOAP = SoapSender.sendRequestAndGetResponse(endpoint, soapAction, IssoInfo);
+    }
+
+    public void getResponse() {
+        IssoInfoResponseData.getResponseData(responseSOAP);
     }
 
 }
