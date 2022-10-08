@@ -18,12 +18,13 @@ public class IssoInfoService {
 
     private Document responseSOAP;
 
-    public void sendRequest(IssoInfo IssoInfo) {
-        responseSOAP = SoapSender.sendRequestAndGetResponse(endpoint, soapAction, IssoInfo);
+
+    public void sendRequest(IssoInfo issoInfo) {
+        responseSOAP = SoapSender.sendRequestAndGetResponse(endpoint, soapAction, issoInfo);
     }
 
-    public void getResponse() {
-        IssoInfoResponseData.getResponseData(responseSOAP);
+    public void getResponse(IssoInfo issoInfo) {
+        IssoInfoResponseData.getResponseData(responseSOAP, issoInfo);
     }
 
 }

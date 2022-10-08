@@ -26,13 +26,41 @@
         <form th:action="@{/getIssoInfo}" th:object="${issoInfo}" method="post">
             <div class="row">
                 <div class="mb-3 col-md-6">
-                    <label class="form-label" for="cIsso">id ИССО</label>
+                    <label class="form-label" for="cIsso">id ИССО // 5500934</label>
                     <input class="form-control" id="cIsso" required type="number" placeholder="введите id" th:field="*{cIssoField}">
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
                 </div>
             </div>
             <div class="row">
                 <p th:text="${issoInfo.cIssoField}"></p>
+                <p th:text="${issoInfo.barrierName}"></p>
+                <p th:text="${issoInfo.buildOrg}"></p>
+                <p th:text="${issoInfo.buildYear}"></p>
+                <p th:text="${issoInfo.city}"></p>
+                <p th:text="${issoInfo.description}"></p>
+                <p th:text="${issoInfo.dist}"></p>
+                <p th:text="${issoInfo.examOrg}"></p>
+                <p th:text="${issoInfo.id}"></p>
+                <p th:text="${issoInfo.id2}"></p>
+                <p th:text="${issoInfo.issoSuperType}"></p>
+                <p th:text="${issoInfo.issoType}"></p>
+                <p th:text="${issoInfo.kak}"></p>
+                <p th:text="${issoInfo.kn3}"></p>
+                <p th:text="${issoInfo.knk}"></p>
+                <p th:text="${issoInfo.length}"></p>
+                <p th:text="${issoInfo.location}"></p>
+                <p th:text="${issoInfo.obst}"></p>
+                <p th:text="${issoInfo.operOrg}"></p>
+                <p th:text="${issoInfo.plan}"></p>
+                <p th:text="${issoInfo.proOrg}"></p>
+                <p th:text="${issoInfo.raiting}"></p>
+                <p th:text="${issoInfo.raitingDate}"></p>
+                <p th:text="${issoInfo.region}"></p>
+                <p th:text="${issoInfo.road}"></p>
+                <p th:text="${issoInfo.roadKategory}"></p>
+                <p th:text="${issoInfo.strain}"></p>
+                <p th:text="${issoInfo.upr}"></p>
+                <p th:text="${issoInfo.width}"></p>
             </div>
         </form>
     </div>

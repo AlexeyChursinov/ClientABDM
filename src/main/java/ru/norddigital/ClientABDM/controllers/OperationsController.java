@@ -21,7 +21,7 @@ public class OperationsController {
     public String sendRequest(@ModelAttribute("issoInfo") IssoInfo issoInfo) {
 
         issoInfoService.sendRequest(issoInfo);
-        issoInfoService.getResponse();
+        issoInfoService.getResponse(issoInfo);
 
         return "getIssoInfo";
     }
