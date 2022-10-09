@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.xml.soap.*;
 
 @Data
-public class IssoInfo implements SoapBodyOperations{
+public class IssoInfo implements ISoapOperations {
 
     private String cIssoField; //5500934
 

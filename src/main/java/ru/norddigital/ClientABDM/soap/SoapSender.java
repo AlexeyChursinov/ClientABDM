@@ -1,7 +1,7 @@
 package ru.norddigital.ClientABDM.soap;
 
 import org.w3c.dom.Document;
-import ru.norddigital.ClientABDM.soap.operations.SoapBodyOperations;
+import ru.norddigital.ClientABDM.soap.operations.ISoapOperations;
 import ru.norddigital.ClientABDM.utils.UtilsXML;
 
 import javax.xml.soap.SOAPConnection;
@@ -11,7 +11,7 @@ import java.io.ByteArrayOutputStream;
 
 public class SoapSender {
 
-    public static Document sendRequestAndGetResponse(String soapEndpointUrl, String soapAction, SoapBodyOperations soapOperation) {
+    public static Document sendRequestAndGetResponse(String soapEndpointUrl, String soapAction, ISoapOperations soapOperation) {
         String responseMsg = "";
         try {
             // Create SOAP Connection

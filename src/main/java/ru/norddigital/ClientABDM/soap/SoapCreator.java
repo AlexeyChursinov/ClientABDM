@@ -1,12 +1,12 @@
 package ru.norddigital.ClientABDM.soap;
 
-import ru.norddigital.ClientABDM.soap.operations.SoapBodyOperations;
+import ru.norddigital.ClientABDM.soap.operations.ISoapOperations;
 
 import javax.xml.soap.*;
 
 public class SoapCreator {
 
-    public static void createSoapEnvelope(SOAPMessage soapMessage, SoapBodyOperations soapOperation) throws SOAPException {
+    public static void createSoapEnvelope(SOAPMessage soapMessage, ISoapOperations soapOperation) throws SOAPException {
         SOAPPart soapPart = soapMessage.getSOAPPart();
 
         String namespace = "tem";
@@ -19,7 +19,7 @@ public class SoapCreator {
 
     }
 
-    public static SOAPMessage createSOAPRequest(String soapAction, SoapBodyOperations soapOperation) throws Exception {
+    public static SOAPMessage createSOAPRequest(String soapAction, ISoapOperations soapOperation) throws Exception {
         MessageFactory messageFactory = MessageFactory.newInstance();
         SOAPMessage soapMessage = messageFactory.createMessage();
 

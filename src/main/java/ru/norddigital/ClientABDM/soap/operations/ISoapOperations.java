@@ -4,6 +4,6 @@ import javax.xml.soap.SOAPBody;
 import javax.xml.soap.SOAPEnvelope;
 import javax.xml.soap.SOAPException;
 
-public interface SoapBodyOperations {
+public interface ISoapOperations {
     SOAPBody createSoapBody(SOAPEnvelope envelope, String Namespace) throws SOAPException;
 }

@@ -1,19 +1,23 @@
 package ru.norddigital.ClientABDM.soap.responseData;
 
+import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import ru.norddigital.ClientABDM.soap.operations.IssoInfo;
+import ru.norddigital.ClientABDM.soap.operations.ISoapOperations;
 import ru.norddigital.ClientABDM.utils.SoapParser;
 import ru.norddigital.ClientABDM.utils.UtilsXML;
 
-import javax.swing.plaf.synth.Region;
+@Component
+public class IssoInfoResponseData implements IResponseData{
 
+    @Override
+    public void getResponseData(Document soapDucument, ISoapOperations soapOperation) {
+        IssoInfo issoInfo;
+        issoInfo = (IssoInfo) soapOperation;
 
-public class IssoInfoResponseData {
-
-    public static void getResponseData(Document responseSOAP, IssoInfo issoInfo) {
-        String response = UtilsXML.documentToString(responseSOAP);
+        String response = UtilsXML.documentToString(soapDucument);
         Node rootNode = SoapParser.getSoapBody(response);
 //        System.out.println("Root Element: " + rootNode.getNodeName());
 
