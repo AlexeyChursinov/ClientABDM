@@ -23,44 +23,152 @@
         <a href="/">Главная страница</a>
     </div>
     <div class="mt-5">
-        <form th:action="@{/getIssoInfo}" th:object="${issoInfo}" method="post">
+        <form method="post" th:action="@{/getIssoInfo}" th:object="${issoInfo}">
             <div class="row">
                 <div class="mb-3 col-md-6">
                     <label class="form-label" for="cIsso">id ИССО // 5500934</label>
-                    <input class="form-control" id="cIsso" required type="number" placeholder="введите id" th:field="*{cIssoField}">
+                    <input class="form-control" id="cIsso" placeholder="введите id" required th:field="*{cIssoField}"
+                           type="number">
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
                 </div>
             </div>
-            <div class="row">
-                <p th:text="${issoInfo.barrierName}"></p>
-                <p th:text="${issoInfo.buildOrg}"></p>
-                <p th:text="${issoInfo.buildYear}"></p>
-                <p th:text="${issoInfo.city}"></p>
-                <p th:text="${issoInfo.description}"></p>
-                <p th:text="${issoInfo.dist}"></p>
-                <p th:text="${issoInfo.examOrg}"></p>
-                <p th:text="${issoInfo.id}"></p>
-                <p th:text="${issoInfo.id2}"></p>
-                <p th:text="${issoInfo.issoSuperType}"></p>
-                <p th:text="${issoInfo.issoType}"></p>
-                <p th:text="${issoInfo.kak}"></p>
-                <p th:text="${issoInfo.kn3}"></p>
-                <p th:text="${issoInfo.knk}"></p>
-                <p th:text="${issoInfo.length}"></p>
-                <p th:text="${issoInfo.location}"></p>
-                <p th:text="${issoInfo.obst}"></p>
-                <p th:text="${issoInfo.operOrg}"></p>
-                <p th:text="${issoInfo.plan}"></p>
-                <p th:text="${issoInfo.proOrg}"></p>
-                <p th:text="${issoInfo.raiting}"></p>
-                <p th:text="${issoInfo.raitingDate}"></p>
-                <p th:text="${issoInfo.region}"></p>
-                <p th:text="${issoInfo.road}"></p>
-                <p th:text="${issoInfo.roadKategory}"></p>
-                <p th:text="${issoInfo.strain}"></p>
-                <p th:text="${issoInfo.upr}"></p>
-                <p th:text="${issoInfo.width}"></p>
-            </div>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Элемент</th>
+                    <th>Наименование элемента</th>
+                    <th>Ответ от сервиса</th>
+                </tr>
+                <tr>
+                    <td>barrierName</td>
+                    <td></td>
+                    <td th:text="${issoInfo.barrierName}"></td>
+                </tr>
+                <tr>
+                    <td>buildOrg</td>
+                    <td></td>
+                    <td th:text="${issoInfo.buildOrg}"></td>
+                </tr>
+                <tr>
+                    <td>buildYear</td>
+                    <td></td>
+                    <td th:text="${issoInfo.buildYear}"></td>
+                </tr>
+                <tr>
+                    <td>city</td>
+                    <td></td>
+                    <td th:text="${issoInfo.city}"></td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td></td>
+                    <td th:text="${issoInfo.description}"></td>
+                </tr>
+                <tr>
+                    <td>dist</td>
+                    <td></td>
+                    <td th:text="${issoInfo.dist}"></td>
+                </tr>
+                <tr>
+                    <td>examOrg</td>
+                    <td></td>
+                    <td th:text="${issoInfo.examOrg}"></td>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td></td>
+                    <td th:text="${issoInfo.id}"></td>
+                </tr>
+                <tr>
+                    <td>id2</td>
+                    <td></td>
+                    <td th:text="${issoInfo.id2}"></td>
+                </tr>
+                <tr>
+                    <td>issoSuperType</td>
+                    <td></td>
+                    <td th:text="${issoInfo.issoSuperType}"></td>
+                </tr>
+                <tr>
+                    <td>issoType</td>
+                    <td></td>
+                    <td th:text="${issoInfo.issoType}"></td>
+                </tr>
+                <tr>
+                    <td>kak</td>
+                    <td></td>
+                    <td th:text="${issoInfo.kak}"></td>
+                </tr>
+                <tr>
+                    <td>kn3</td>
+                    <td></td>
+                    <td th:text="${issoInfo.kn3}"></td>
+                </tr>
+                <tr>
+                    <td>knk</td>
+                    <td></td>
+                    <td th:text="${issoInfo.knk}"></td>
+                </tr>
+                <tr>
+                    <td>length</td>
+                    <td></td>
+                    <td th:text="${issoInfo.length}"></td>
+                </tr>
+                <tr>
+                    <td>location</td>
+                    <td></td>
+                    <td th:text="${issoInfo.location}"></td>
+                </tr>
+                <tr>
+                    <td>obst</td>
+                    <td></td>
+                    <td th:text="${issoInfo.obst}"></td>
+                </tr>
+                <tr>
+                    <td>operOrg</td>
+                    <td></td>
+                    <td th:text="${issoInfo.operOrg}"></td>
+                </tr>
+                <tr>
+                    <td>raiting</td>
+                    <td></td>
+                    <td th:text="${issoInfo.raiting}"></td>
+                </tr>
+                <tr>
+                    <td>raitingDate</td>
+                    <td></td>
+                    <td th:text="${issoInfo.raitingDate}"></td>
+                </tr>
+                <tr>
+                    <td>region</td>
+                    <td></td>
+                    <td th:text="${issoInfo.region}"></td>
+                </tr>
+                <tr>
+                    <td>road</td>
+                    <td></td>
+                    <td th:text="${issoInfo.road}"></td>
+                </tr>
+                <tr>
+                    <td>roadKategory</td>
+                    <td></td>
+                    <td th:text="${issoInfo.roadKategory}"></td>
+                </tr>
+                <tr>
+                    <td>strain</td>
+                    <td></td>
+                    <td th:text="${issoInfo.strain}"></td>
+                </tr>
+                <tr>
+                    <td>upr</td>
+                    <td></td>
+                    <td th:text="${issoInfo.upr}"></td>
+                </tr>
+                <tr>
+                    <td>width</td>
+                    <td></td>
+                    <td th:text="${issoInfo.width}"></td>
+                </tr>
+            </table>
         </form>
     </div>
 </div>
@@ -68,6 +176,7 @@
     function init() {
         document.getElementById("cIsso").value = "";
     }
+
     window.onload = init;
 </script>
 </body>
