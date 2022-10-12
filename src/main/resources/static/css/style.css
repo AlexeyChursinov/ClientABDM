@@ -6,3 +6,27 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+
+tbody, td, tfoot, th, thead, tr {
+    vertical-align: middle;
+}
+
+.table>thead {
+    color: #fff;
+    background-color: #565e9d;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.5rem 1rem;
+    border-bottom-width: 0;
+}
+
+.response-table {
+    --border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    border-top: none;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: var(--border);
+    overflow: hidden;
+}
