@@ -32,7 +32,13 @@
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
                 </div>
             </div>
-            <div th:if="${issoInfo.cIssoField} != null">
+
+            <div th:if="${issoInfo.errorResponseMessage} != null">
+                <p><b>Произошла ошибка!</b></p>
+                <p th:text="${issoInfo.errorResponseMessage}"></p>
+            </div>
+
+            <div th:if="${issoInfo.cIssoField} != null and ${issoInfo.errorResponseMessage} == null">
                 <h3>Ответ от сервиса</h3>
                 <table class="table table-striped response-table mt-3 mb-5">
                     <thead>

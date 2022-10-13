@@ -1,3 +1,7 @@
+body {
+    background-color: #fdfdff;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -13,7 +17,7 @@ tbody, td, tfoot, th, thead, tr {
 
 .table>thead {
     color: #fff;
-    background-color: #565e9d;
+    background-color: #3677af;
 }
 
 .table>:not(caption)>*>* {
@@ -21,12 +25,16 @@ tbody, td, tfoot, th, thead, tr {
     border-bottom-width: 0;
 }
 
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: rgba(170, 174, 199, .15);
+}
+
 .response-table {
-    --border: 1px solid #f2f2f2;
+    --border: 1px solid rgba(170, 174, 199, .15);
     border-radius: 10px;
-    border-top: none;
     border-spacing: 0;
     border-collapse: separate;
     border: var(--border);
     overflow: hidden;
 }
+

@@ -10,16 +10,35 @@ import ru.norddigital.ClientABDM.utils.SoapParser;
 import ru.norddigital.ClientABDM.utils.UtilsXML;
 
 @Component
-public class IssoInfoResponseData implements IResponseData{
+public class IssoInfoResponseData implements IResponseData {
 
     @Override
     public void getResponseData(Document soapDucument, ISoapOperations soapOperation) {
+
+        String errorResponseMessage = null;
+
         IssoInfo issoInfo;
         issoInfo = (IssoInfo) soapOperation;
 
         String response = UtilsXML.documentToString(soapDucument);
         Node rootNode = SoapParser.getSoapBody(response);
 //        System.out.println("Root Element: " + rootNode.getNodeName());
+
+        if (rootNode.getNodeName().equals("s:Fault")) {
+            NodeList nodeFaultChilds = rootNode.getChildNodes();
+            for (int i = 0; i < nodeFaultChilds.getLength(); i++) {
+
+                if (nodeFaultChilds.item(i).getNodeType() != Node.ELEMENT_NODE) {
+                    continue;
+                }
+
+                if ("faultstring".equals(nodeFaultChilds.item(i).getNodeName())) {
+                    errorResponseMessage = nodeFaultChilds.item(i).getTextContent();
+                    System.out.println("faultstring = " + errorResponseMessage);
+                    issoInfo.setErrorResponseMessage(errorResponseMessage);
+                }
+            }
+        }
 
         Node rootNodeChild = rootNode.getFirstChild();
 //        System.out.println("Child Root Element: " + rootNodeChild.getNodeName());

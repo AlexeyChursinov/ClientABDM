@@ -38,6 +38,8 @@ public class IssoInfo implements ISoapOperations {
     private String upr;
     private String width;
 
+    private String errorResponseMessage;
+
     @Override
     public SOAPBody createSoapBody(SOAPEnvelope envelope, String namespace) throws SOAPException {
         SOAPBody soapBody = envelope.getBody();
