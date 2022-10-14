@@ -38,7 +38,7 @@ public class OperationsController {
     public String sendRequest(@ModelAttribute("issoList") IssoList issoList) {
 
         operationsService.sendRequest(issoList, soapActionIssoList);
-//        operationsService.getResponse(issoInfo);
+//        operationsService.getResponse(issoList);
 
         return "getIssoList";
     }
