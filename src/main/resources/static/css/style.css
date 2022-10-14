@@ -1,5 +1,10 @@
 body {
     background-color: #fdfdff;
+    color: #2a3038;
+}
+
+a {
+    text-decoration: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -38,3 +43,46 @@ tbody, td, tfoot, th, thead, tr {
     overflow: hidden;
 }
 
+.bg-nav {
+    /*background-color: #3677af;*/
+    background-image: linear-gradient(90deg, #4c9de3, #635eb0, #3677af);
+    box-shadow: 0px 5px 24px rgba(67, 105, 162, 0.60), 0px 0px 1px rgba(68, 67, 162, 0.60);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3677af;
+    border-color: #3677af;
+}
+
+.btn-primary:hover {
+    background-color: #245c8d;
+    border-color: #245c8d;
+}
+
+.btn-outline-primary {
+    color: #3677af;
+    border-color: #3677af;
+}
+
+.btn-outline-primary:hover {
+    background-color: #3677af;
+    border-color: #3677af;
+}
+
+.operation {
+    height: 60px;
+    border-radius: 6px;
+    background-color: #e9f1fb;
+    margin-bottom: 1rem;
+    transition: background-color .2s ease-in-out;
+}
+
+.operation:hover {
+    background-color: #d1e3f9;
+}
+
+.operation a {
+    display: block;
+    padding: 18px;
+}

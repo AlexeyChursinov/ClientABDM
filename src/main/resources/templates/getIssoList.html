@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link rel="icon" sizes="32x32" th:href="@{img/favicon_32x32.png}" type="image/png">
+    <link rel="icon" sizes="16x16" th:href="@{img/favicon_16x16.png}" type="image/png">
+    <title>АБДМ</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" th:href="@{css/normalize.css}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/style.css}"/>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-nav">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <b>АБДМ ФДА</b>
+        </a>
+    </div>
+</nav>
+<div class="container">
+    <div class="mt-5">
+        <h3><b>GetIssoInfoList:</b> Получить список ИССО по ID-АБДМ дороги, ФКУ и региона</h3>
+
+        <div class="bs-component">
+            <div class="alert alert-dismissible alert-primary">
+                <h4 class="alert-heading">Адрес метода</h4>
+                <p class="mb-0">http://10.10.1.13:9993/Ais7IntegrationAvtodor.Avtodor.Iais7WcfIntegrationAvtodor</p><br>
+                <p>Для проверки успешной отправки запроса можно использовать следующие параметры:<br>
+                    <b>id Road:</b> 5100<br>
+                    <b>id Upr:</b> 37<br>
+                    <b>id Region:</b> 5</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a class="btn btn-outline-primary" href="/" type="button">Выбор метода</a>
+    </div>
+    <div class="mt-5">
+        <form method="post" th:action="@{/getIssoList}" th:object="${issoList}">
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label class="form-label" for="road">id Road</label>
+                    <input class="form-control" id="road" placeholder="введите id Road" required th:field="*{road}"
+                           type="number">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label class="form-label" for="upr">id Upr</label>
+                    <input class="form-control" id="upr" placeholder="введите id Upr" required th:field="*{upr}"
+                           type="number">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label class="form-label" for="region">id Region</label>
+                    <input class="form-control" id="region" placeholder="введите id Region" required th:field="*{region}"
+                           type="number">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
+                </div>
+            </div>
+
+            <!--            <div th:if="${issoInfo.errorResponseMessage} != null">-->
+            <!--                <div class="bs-component">-->
+            <!--                    <div class="alert alert-dismissible alert-danger">-->
+            <!--                        <h4 class="alert-heading">Произошла ошибка!</h4>-->
+            <!--                        <p th:text="${issoInfo.errorResponseMessage}"></p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            <div th:if="${issoInfo.cIssoField} != null and ${issoInfo.errorResponseMessage} == null">-->
+            <!--                <h3>Ответ от сервиса</h3>-->
+            <!--                <table class="table table-striped response-table mt-3 mb-5">-->
+            <!--                    <thead>-->
+            <!--                    <tr>-->
+            <!--                        <th>Элемент</th>-->
+            <!--                        <th>Наименование элемента</th>-->
+            <!--                        <th>Значене элемента</th>-->
+            <!--                    </tr>-->
+            <!--                    </thead>-->
+            <!--                    <tbody>-->
+            <!--                    <tr>-->
+            <!--                        <td>barrierName</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.barrierName}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>buildOrg</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.buildOrg}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>buildYear</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.buildYear}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>city</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.city}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>description</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.description}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>dist</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.dist}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>examOrg</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.examOrg}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>id</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.id}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>id2</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.id2}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>issoSuperType</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.issoSuperType}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>issoType</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.issoType}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>kak</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.kak}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>kn3</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.kn3}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>knk</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.knk}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>length</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.length}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>location</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.location}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>obst</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.obst}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>operOrg</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.operOrg}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>raiting</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.raiting}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>raitingDate</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.raitingDate}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>region</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.region}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>road</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.road}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>roadKategory</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.roadKategory}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>strain</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.strain}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>upr</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.upr}"></td>-->
+            <!--                    </tr>-->
+            <!--                    <tr>-->
+            <!--                        <td>width</td>-->
+            <!--                        <td></td>-->
+            <!--                        <td th:text="${issoInfo.width}"></td>-->
+            <!--                    </tr>-->
+            <!--                    </tbody>-->
+            <!--                </table>-->
+            <!--            </div>-->
+        </form>
+    </div>
+</div>
+<script>
+    function init() {
+        document.getElementById("road").value = "";
+        document.getElementById("upr").value = "";
+        document.getElementById("region").value = "";
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>

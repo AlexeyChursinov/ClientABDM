@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -15,21 +15,12 @@
     <link rel="stylesheet" th:href="@{css/style.css}"/>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-nav">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <b>АБДМ ФДА</b>
-        </a>
-    </div>
-</nav>
 <div class="container">
-    <div class="mt-4">
-        <h3>Выбор метода сервиса (операции)</h3>
+    <div class="mt-2">
+        <h2>Произошла ошибка</h2>
     </div>
     <div class="mt-5">
-        <div class="operation"><a href="/getIssoInfo"><b>GetIssoInfo:</b> Получение информации по ИССО по его Id</a></div>
-        <div class="operation"><a href="/getIssoList"><b>GetIssoInfoList:</b> Получить список ИССО по ID-АБДМ дороги, ФКУ и региона</a>
-        </div>
+        <a href="/">Главная страница</a>
     </div>
 </div>
 </body>

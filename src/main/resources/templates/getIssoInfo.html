@@ -15,18 +15,33 @@
     <link rel="stylesheet" th:href="@{css/style.css}"/>
 </head>
 <body>
-<div class="container">
-    <div class="mt-2">
-        <h2><b>GetIssoInfo:</b> Получение информации по ИССО по его Id</h2>
+<nav class="navbar navbar-dark bg-nav">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <b>АБДМ ФДА</b>
+        </a>
     </div>
+</nav>
+<div class="container">
     <div class="mt-5">
-        <a href="/">Главная страница</a>
+        <h3><b>GetIssoInfo:</b> Получение информации по ИССО по его Id</h3>
+
+        <div class="bs-component">
+            <div class="alert alert-dismissible alert-primary">
+                <h4 class="alert-heading">Адрес метода</h4>
+                <p class="mb-0">http://10.10.1.13:9993/Ais7IntegrationAvtodor.Avtodor.Iais7WcfIntegrationAvtodor</p>
+                <p>Для проверки успешной отправки запроса можно использовать id: 5500934 // 3500086</p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a href="/" type="button" class="btn btn-outline-primary">Выбор метода</a>
     </div>
     <div class="mt-5">
         <form method="post" th:action="@{/getIssoInfo}" th:object="${issoInfo}">
             <div class="row">
                 <div class="mb-3 col-md-6">
-                    <label class="form-label" for="cIsso">id ИССО // 5500934 // 3500086</label>
+                    <label class="form-label" for="cIsso">id ИССО</label>
                     <input class="form-control" id="cIsso" placeholder="введите id" required th:field="*{cIssoField}"
                            type="number">
                     <button class="btn btn-primary mt-3" type="submit">Отправить запрос</button>
@@ -34,8 +49,12 @@
             </div>
 
             <div th:if="${issoInfo.errorResponseMessage} != null">
-                <p><b>Произошла ошибка!</b></p>
-                <p th:text="${issoInfo.errorResponseMessage}"></p>
+                <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                        <h4 class="alert-heading">Произошла ошибка!</h4>
+                        <p th:text="${issoInfo.errorResponseMessage}"></p>
+                    </div>
+                </div>
             </div>
 
             <div th:if="${issoInfo.cIssoField} != null and ${issoInfo.errorResponseMessage} == null">

@@ -13,9 +13,6 @@ public class OperationsService {
     @Value("${GetIssoInfo_endpointURI}")
     private String endpoint;
 
-    @Value("${IssoInfo_SoapAction}")
-    private String soapAction;
-
     private Document soapDocument;
 
     private final IResponseData responseData;
@@ -25,7 +22,7 @@ public class OperationsService {
         this.responseData = responseData;
     }
 
-    public void sendRequest(ISoapOperations soapOperation) {
+    public void sendRequest(ISoapOperations soapOperation, String soapAction) {
         soapDocument = SoapSender.sendRequestAndGetResponse(endpoint, soapAction, soapOperation);
     }
 
