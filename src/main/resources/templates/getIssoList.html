@@ -55,7 +55,8 @@
                 </div>
                 <div class="mb-3 col-md-4">
                     <label class="form-label" for="region">id Region</label>
-                    <input class="form-control" id="region" placeholder="введите id Region" required th:field="*{region}"
+                    <input class="form-control" id="region" placeholder="введите id Region" required
+                           th:field="*{region}"
                            type="number">
                 </div>
                 <div class="mb-3 col-md-4">
@@ -63,14 +64,14 @@
                 </div>
             </div>
 
-            <!--            <div th:if="${issoInfo.errorResponseMessage} != null">-->
-            <!--                <div class="bs-component">-->
-            <!--                    <div class="alert alert-dismissible alert-danger">-->
-            <!--                        <h4 class="alert-heading">Произошла ошибка!</h4>-->
-            <!--                        <p th:text="${issoInfo.errorResponseMessage}"></p>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
+            <div th:if="${issoList.errorResponseMessage} != null">
+                <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                        <h4 class="alert-heading">Произошла ошибка!</h4>
+                        <p th:text="${issoList.errorResponseMessage}"></p>
+                    </div>
+                </div>
+            </div>
 
             <!--            <div th:if="${issoInfo.cIssoField} != null and ${issoInfo.errorResponseMessage} == null">-->
             <!--                <h3>Ответ от сервиса</h3>-->

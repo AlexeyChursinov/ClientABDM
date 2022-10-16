@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.norddigital.ClientABDM.service.OperationsService;
 import ru.norddigital.ClientABDM.soap.operations.IssoInfo;
 import ru.norddigital.ClientABDM.soap.operations.IssoList;
+import ru.norddigital.ClientABDM.soap.responseData.IssoInfoResponseData;
+import ru.norddigital.ClientABDM.soap.responseData.IssoListResponseData;
 
 @Controller
 public class OperationsController {
@@ -18,18 +20,22 @@ public class OperationsController {
     @Value("${IssoList_SoapAction}")
     private String soapActionIssoList;
 
-    OperationsService operationsService;
+    private final OperationsService operationsService;
+    private final IssoInfoResponseData issoInfoResponseData;
+    private final IssoListResponseData issoListResponseData;
 
     @Autowired
-    public OperationsController(OperationsService operationsService) {
+    public OperationsController(OperationsService operationsService, IssoInfoResponseData issoInfoResponseData, IssoListResponseData issoListResponseData) {
         this.operationsService = operationsService;
+        this.issoInfoResponseData = issoInfoResponseData;
+        this.issoListResponseData = issoListResponseData;
     }
 
     @PostMapping("/getIssoInfo")
     public String sendRequest(@ModelAttribute("issoInfo") IssoInfo issoInfo) {
 
         operationsService.sendRequest(issoInfo, soapActionIssoInfo);
-        operationsService.getResponse(issoInfo);
+        operationsService.getResponse(issoInfo, issoInfoResponseData);
 
         return "getIssoInfo";
     }
@@ -38,7 +44,7 @@ public class OperationsController {
     public String sendRequest(@ModelAttribute("issoList") IssoList issoList) {
 
         operationsService.sendRequest(issoList, soapActionIssoList);
-//        operationsService.getResponse(issoList);
+        operationsService.getResponse(issoList, issoListResponseData);
 
         return "getIssoList";
     }
