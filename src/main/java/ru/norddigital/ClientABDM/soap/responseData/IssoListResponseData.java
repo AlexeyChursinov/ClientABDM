@@ -1,5 +1,7 @@
 package ru.norddigital.ClientABDM.soap.responseData;
 
+import lombok.Data;
+import lombok.Getter;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -13,7 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class IssoListResponseData implements IResponseData{
+@Getter
+public class IssoListResponseData implements IResponseData {
+
+    List<IssoList> issoLists;
 
     @Override
     public void getResponseData(Document soapDocument, ISoapOperations soapOperation) {
@@ -63,7 +68,7 @@ public class IssoListResponseData implements IResponseData{
                 upr,
                 width = null;
 
-        List<IssoList> issoLists = new ArrayList<>();
+        issoLists = new ArrayList<>();
 
         for (int i = 0; i < nodeChilds.getLength(); i++) {
 
@@ -72,10 +77,10 @@ public class IssoListResponseData implements IResponseData{
             }
 
             NodeList childElements = nodeChilds.item(i).getChildNodes();
+            IssoList issoListNode = new IssoList();
 
             for (int j = 0; j < childElements.getLength(); j++) {
 
-                IssoList issoListNode = new IssoList();
 
                 switch (childElements.item(j).getNodeName()) {
                     case "a:BarrierName": {
@@ -247,8 +252,8 @@ public class IssoListResponseData implements IResponseData{
                         break;
                     }
                 }
-                issoLists.add(issoListNode);
             }
+            issoLists.add(issoListNode);
         }
     }
 }

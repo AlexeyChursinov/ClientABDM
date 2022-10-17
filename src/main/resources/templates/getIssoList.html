@@ -73,150 +73,155 @@
                 </div>
             </div>
 
-            <!--            <div th:if="${issoInfo.cIssoField} != null and ${issoInfo.errorResponseMessage} == null">-->
-            <!--                <h3>Ответ от сервиса</h3>-->
-            <!--                <table class="table table-striped response-table mt-3 mb-5">-->
-            <!--                    <thead>-->
-            <!--                    <tr>-->
-            <!--                        <th>Элемент</th>-->
-            <!--                        <th>Наименование элемента</th>-->
-            <!--                        <th>Значене элемента</th>-->
-            <!--                    </tr>-->
-            <!--                    </thead>-->
-            <!--                    <tbody>-->
-            <!--                    <tr>-->
-            <!--                        <td>barrierName</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.barrierName}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>buildOrg</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.buildOrg}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>buildYear</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.buildYear}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>city</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.city}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>description</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.description}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>dist</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.dist}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>examOrg</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.examOrg}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>id</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.id}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>id2</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.id2}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>issoSuperType</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.issoSuperType}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>issoType</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.issoType}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>kak</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.kak}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>kn3</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.kn3}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>knk</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.knk}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>length</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.length}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>location</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.location}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>obst</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.obst}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>operOrg</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.operOrg}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>raiting</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.raiting}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>raitingDate</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.raitingDate}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>region</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.region}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>road</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.road}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>roadKategory</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.roadKategory}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>strain</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.strain}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>upr</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.upr}"></td>-->
-            <!--                    </tr>-->
-            <!--                    <tr>-->
-            <!--                        <td>width</td>-->
-            <!--                        <td></td>-->
-            <!--                        <td th:text="${issoInfo.width}"></td>-->
-            <!--                    </tr>-->
-            <!--                    </tbody>-->
-            <!--                </table>-->
-            <!--            </div>-->
+            <div th:if="${issoList.errorResponseMessage} == null and ${issoList.road} != null">
+                <h3>Ответ от сервиса</h3>
+                <table class="table table-striped response-table mt-3 mb-5">
+                    <thead>
+                    <tr>
+                        <th>Элемент</th>
+                        <th>Наименование элемента</th>
+                        <th>Значене элемента</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <div th:each="info : ${issoLists}">
+                        <tr>
+                            <td>barrierName</td>
+                            <td></td>
+                            <td th:text="${info.barrierName}"></td>
+                        </tr>
+                        <tr>
+                            <td>buildOrg</td>
+                            <td></td>
+                            <td th:text="${info.buildOrg}"></td>
+                        </tr>
+                        <tr>
+                            <td>buildYear</td>
+                            <td></td>
+                            <td th:text="${info.buildYear}"></td>
+                        </tr>
+                        <tr>
+                            <td>city</td>
+                            <td></td>
+                            <td th:text="${info.city}"></td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td></td>
+                            <td th:text="${info.description}"></td>
+                        </tr>
+                        <tr>
+                            <td>dist</td>
+                            <td></td>
+                            <td th:text="${info.dist}"></td>
+                        </tr>
+                        <tr>
+                            <td>examOrg</td>
+                            <td></td>
+                            <td th:text="${info.examOrg}"></td>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td></td>
+                            <td th:text="${info.id}"></td>
+                        </tr>
+                        <tr>
+                            <td>id2</td>
+                            <td></td>
+                            <td th:text="${info.id2}"></td>
+                        </tr>
+                        <tr>
+                            <td>issoSuperType</td>
+                            <td></td>
+                            <td th:text="${info.issoSuperType}"></td>
+                        </tr>
+                        <tr>
+                            <td>issoType</td>
+                            <td></td>
+                            <td th:text="${info.issoType}"></td>
+                        </tr>
+                        <tr>
+                            <td>kak</td>
+                            <td></td>
+                            <td th:text="${info.kak}"></td>
+                        </tr>
+                        <tr>
+                            <td>kn3</td>
+                            <td></td>
+                            <td th:text="${info.kn3}"></td>
+                        </tr>
+                        <tr>
+                            <td>knk</td>
+                            <td></td>
+                            <td th:text="${info.knk}"></td>
+                        </tr>
+                        <tr>
+                            <td>length</td>
+                            <td></td>
+                            <td th:text="${info.length}"></td>
+                        </tr>
+                        <tr>
+                            <td>location</td>
+                            <td></td>
+                            <td th:text="${info.location}"></td>
+                        </tr>
+                        <tr>
+                            <td>obst</td>
+                            <td></td>
+                            <td th:text="${info.obst}"></td>
+                        </tr>
+                        <tr>
+                            <td>operOrg</td>
+                            <td></td>
+                            <td th:text="${info.operOrg}"></td>
+                        </tr>
+                        <tr>
+                            <td>raiting</td>
+                            <td></td>
+                            <td th:text="${info.raiting}"></td>
+                        </tr>
+                        <tr>
+                            <td>raitingDate</td>
+                            <td></td>
+                            <td th:text="${info.raitingDate}"></td>
+                        </tr>
+                        <tr>
+                            <td>region</td>
+                            <td></td>
+                            <td th:text="${info.region}"></td>
+                        </tr>
+                        <tr>
+                            <td>road</td>
+                            <td></td>
+                            <td th:text="${info.road}"></td>
+                        </tr>
+                        <tr>
+                            <td>roadKategory</td>
+                            <td></td>
+                            <td th:text="${info.roadKategory}"></td>
+                        </tr>
+                        <tr>
+                            <td>strain</td>
+                            <td></td>
+                            <td th:text="${info.strain}"></td>
+                        </tr>
+                        <tr>
+                            <td>upr</td>
+                            <td></td>
+                            <td th:text="${info.upr}"></td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td></td>
+                            <td th:text="${info.width}"></td>
+                        </tr>
+                        <tr class="tr-line">
+                            <td colspan="3"></td>
+                        </tr>
+                    </div>
+                    </tbody>
+                </table>
+            </div>
         </form>
     </div>
 </div>

@@ -3,6 +3,7 @@ package ru.norddigital.ClientABDM.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.norddigital.ClientABDM.service.OperationsService;
@@ -10,6 +11,8 @@ import ru.norddigital.ClientABDM.soap.operations.IssoInfo;
 import ru.norddigital.ClientABDM.soap.operations.IssoList;
 import ru.norddigital.ClientABDM.soap.responseData.IssoInfoResponseData;
 import ru.norddigital.ClientABDM.soap.responseData.IssoListResponseData;
+
+import java.util.List;
 
 @Controller
 public class OperationsController {
@@ -41,10 +44,11 @@ public class OperationsController {
     }
 
     @PostMapping("/getIssoList")
-    public String sendRequest(@ModelAttribute("issoList") IssoList issoList) {
-
+    public String sendRequest(Model model, @ModelAttribute("issoList") IssoList issoList) {
         operationsService.sendRequest(issoList, soapActionIssoList);
         operationsService.getResponse(issoList, issoListResponseData);
+        List<IssoList> issoLists = issoListResponseData.getIssoLists();
+        model.addAttribute("issoLists", issoLists);
 
         return "getIssoList";
     }

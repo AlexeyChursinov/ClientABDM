@@ -43,6 +43,10 @@ tbody, td, tfoot, th, thead, tr {
     overflow: hidden;
 }
 
+.tr-line {
+    background-color: #ccc;
+}
+
 .bg-nav {
     /*background-color: #3677af;*/
     background-image: linear-gradient(90deg, #4c9de3, #635eb0, #3677af);
