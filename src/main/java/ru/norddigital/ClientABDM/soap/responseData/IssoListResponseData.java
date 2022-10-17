@@ -1,6 +1,5 @@
 package ru.norddigital.ClientABDM.soap.responseData;
 
-import lombok.Data;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
@@ -80,7 +79,6 @@ public class IssoListResponseData implements IResponseData {
             IssoList issoListNode = new IssoList();
 
             for (int j = 0; j < childElements.getLength(); j++) {
-
 
                 switch (childElements.item(j).getNodeName()) {
                     case "a:BarrierName": {
