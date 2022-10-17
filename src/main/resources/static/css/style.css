@@ -93,9 +93,11 @@ tbody, td, tfoot, th, thead, tr {
 
 .operation-title {
     box-shadow: 5px 5px 10px rgba(55, 94, 148, .20), -5px -5px 10px rgba(255, 255, 255, .40);
-    border-radius: 20px;
+    border-radius: 35px;
     padding: 16px;
     text-align: center;
+    background-image: linear-gradient(90deg, #add9ff, #e7f7ff, #add9ff);
+    color: #343e89;
 }
 
 .operation-title h3 {
